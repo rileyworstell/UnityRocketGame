@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
@@ -30,11 +31,13 @@ void OnCollisionEnter(Collision collision) {
     case "Friendly":
       print("OK");
       break;
-    case "Fuel":
-    print("Fuel");
+    case "Finish":
+    SceneManager.LoadScene(1);
+    print("Finish");
     break;
     default:
     print("dead");
+    SceneManager.LoadScene(0);
     // destroy ship
         break;
     }
